@@ -8,4 +8,6 @@ measurementDevices = dbContext.Session().query(MeasurementDevice).all()
 for md in measurementDevices:
     print(md)
     for c in md.channels:
-        print("\t", c, c.measurementDevice.id)
+        print("\t", c, c.measurementDevice.id, c.resourceSystemType)
+
+

@@ -18,7 +18,14 @@ class Channel(Base):
         Integer,
         ForeignKey("Business.MeasurementDevice.Id")
     )
+    resourceSystemTypeId = Column(
+        "ResourceSystemTypeId",
+        Integer,
+        ForeignKey("Dictionaries.ResourceSystemType.Id")
+    )
+
     measurementDevice = relationship("MeasurementDevice", back_populates="channels")
+    resourceSystemType = relationship("ResourceSystemType", back_populates="channels")
 
     def __str__(self):
         return self.description
