@@ -5,12 +5,11 @@ from sqlalchemy.orm import sessionmaker
 
 Base = declarative_base()
 
-from dbmodels import measurementdevice, role, accesspoint, channel, user
+from dbmodels.business import accesspoint, user, measurementdevice, role, channel
 
 AccessPoint = accesspoint.AccessPoint;
 MeasurementDevice = measurementdevice.MeasurementDevice
 Channel = channel.Channel
-
 User = user.User
 Role = role.Role
 
