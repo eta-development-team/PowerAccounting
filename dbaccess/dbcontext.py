@@ -8,7 +8,7 @@ Base = declarative_base()
 from dbmodels.dictionaries import resourcesystemtype
 from dbmodels.business import accesspoint, user, measurementdevice, role, channel
 
-AccessPoint = accesspoint.AccessPoint;
+AccessPoint = accesspoint.AccessPoint
 MeasurementDevice = measurementdevice.MeasurementDevice
 Channel = channel.Channel
 User = user.User
