@@ -3,4 +3,4 @@ from dbmodels.dictionaries.dictionary_base import DictionaryBase
 
 
 class TechnologicAdjunctionType(DictionaryBase, Base):
-    __tablename_ = "TechnologicAdjunctionType"
+    __tablename__ = "TechnologicAdjunctionType"

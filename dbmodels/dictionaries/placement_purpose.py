@@ -3,4 +3,4 @@ from dbmodels.dictionaries.dictionary_base import DictionaryBase
 
 
 class PlacementPurpose(DictionaryBase, Base):
-    __tablename_ = "PlacementPurpose"
+    __tablename__ = "PlacementPurpose"

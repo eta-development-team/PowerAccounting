@@ -9,3 +9,4 @@ class ResourceSystemType(DictionaryBase, Base):
 
     shortName = Column("ShortName", String)
     channels = relationship("Channel", back_populates="resourceSystemType")
+    parameters = relationship("Parameter", back_populates="resourceSystemType")

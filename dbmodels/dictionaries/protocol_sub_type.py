@@ -3,4 +3,4 @@ from dbmodels.dictionaries.dictionary_base import DictionaryBase
 
 
 class ProtocolSubType(DictionaryBase, Base):
-    __tablename_ = "ProtocolSubType"
+    __tablename__ = "ProtocolSubType"

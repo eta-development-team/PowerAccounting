@@ -1,7 +1,7 @@
-from sqlalchemy import ForeignKey
+from sqlalchemy.orm import relationship
 
-from dbmodels.dictionaries.dictionary_base import DictionaryBase, Integer, Column
 from dbaccess.dbcontext import Base
+from dbmodels.dictionaries.dictionary_base import DictionaryBase, Integer, Column
 
 
 class PhysicalParameter(DictionaryBase, Base):
@@ -9,17 +9,5 @@ class PhysicalParameter(DictionaryBase, Base):
 
     order = Column("Order", Integer)
 
-
-class Parameter(DictionaryBase, Base):
-    __tablename__ = "Parameter"
-    physicalParameterId = Column(
-        "PhysicalParameterId",
-        Integer,
-        ForeignKey("Dictionaries.PhysicalParameter.Id")
-    )
-    resourceSystemTypeId = Column(
-        "ResourceSystemTypeId",
-        Integer,
-        ForeignKey("Dictionaries.ResourceSystemType.Id")
-    )
-
+    parameters = relationship("Parameter", back_populates="physicalParameter")
+    measurementUnits = relationship("MeasurementUnit", back_populates="physicalParameter")

@@ -3,4 +3,4 @@ from dbmodels.dictionaries.dictionary_base import DictionaryBase
 
 
 class StatusConnection(DictionaryBase, Base):
-    __tablename_ = "StatusConnection"
+    __tablename__ = "StatusConnection"

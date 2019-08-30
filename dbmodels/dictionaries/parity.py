@@ -3,4 +3,4 @@ from dbmodels.dictionaries.dictionary_base import DictionaryBase
 
 
 class Parity(DictionaryBase, Base):
-    __tablename_ = "Parity"
+    __tablename__ = "Parity"

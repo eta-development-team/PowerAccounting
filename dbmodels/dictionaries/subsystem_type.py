@@ -3,4 +3,4 @@ from dbmodels.dictionaries.dictionary_base import DictionaryBase
 
 
 class SubsystemType(DictionaryBase, Base):
-    __tablename_ = "SubsystemType"
+    __tablename__ = "SubsystemType"

@@ -3,4 +3,4 @@ from dbmodels.dictionaries.dictionary_base import DictionaryBase
 
 
 class TypeConnection(DictionaryBase, Base):
-    __tablename_ = "TypeConnection"
+    __tablename__ = "TypeConnection"

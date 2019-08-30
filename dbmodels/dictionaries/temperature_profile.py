@@ -3,4 +3,4 @@ from dbmodels.dictionaries.dictionary_base import DictionaryBase
 
 
 class TemperatureProfile(DictionaryBase, Base):
-    __tablename_ = "TemperatureProfile"
+    __tablename__ = "TemperatureProfile"

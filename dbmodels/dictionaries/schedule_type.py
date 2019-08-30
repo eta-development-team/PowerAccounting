@@ -3,4 +3,4 @@ from dbmodels.dictionaries.dictionary_base import DictionaryBase
 
 
 class ScheduleType(DictionaryBase, Base):
-    __tablename_ = "SeasonType"
+    __tablename__ = "SeasonType"

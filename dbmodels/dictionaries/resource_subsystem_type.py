@@ -3,4 +3,4 @@ from dbmodels.dictionaries.dictionary_base import DictionaryBase
 
 
 class ResourceSubsystemType(DictionaryBase, Base):
-    __tablename_ = "ResourceSubsystemType"
+    __tablename__ = "ResourceSubsystemType"

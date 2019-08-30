@@ -3,4 +3,4 @@ from dbmodels.dictionaries.dictionary_base import DictionaryBase
 
 
 class DataBit(DictionaryBase, Base):
-    __tablename_ = "DataBit"
+    __tablename__ = "DataBit"

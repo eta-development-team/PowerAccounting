@@ -3,4 +3,4 @@ from dbmodels.dictionaries.dictionary_base import DictionaryBase
 
 
 class BuildingPurpose(DictionaryBase, Base):
-    __tablename_ = "BuildingPurpose"
+    __tablename__ = "BuildingPurpose"

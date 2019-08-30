@@ -3,4 +3,4 @@ from dbmodels.dictionaries.dictionary_base import DictionaryBase
 
 
 class Baud(DictionaryBase, Base):
-    __tablename_ = "Baud"
+    __tablename__ = "Baud"
