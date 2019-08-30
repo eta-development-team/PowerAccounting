@@ -1,12 +1,11 @@
 from sqlalchemy.orm import relationship
-from dbmodels.dictionaries.dictionarybase import DictionaryBase
+
 from dbaccess.dbcontext import Base
+from dbmodels.dictionaries.dictionary_base import DictionaryBase, Column, String
 
 
 class ResourceSystemType(DictionaryBase, Base):
     __tablename__ = "ResourceSystemType"
 
+    shortName = Column("ShortName", String)
     channels = relationship("Channel", back_populates="resourceSystemType")
-
-    def __str__(self):
-        return self.description

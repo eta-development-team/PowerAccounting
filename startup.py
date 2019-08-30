@@ -3,9 +3,10 @@ from dbaccess.dbcontext import MeasurementDevice
 
 dbContext = DbContext()
 
-measurementDevices = dbContext.Session()\
-    .query(MeasurementDevice)\
-    .limit(10)
+query = dbContext.Session()\
+    .query(MeasurementDevice)
+
+measurementDevices = query.limit(10)
 
 for md in measurementDevices:
     print(md)

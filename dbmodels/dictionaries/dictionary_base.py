@@ -7,3 +7,6 @@ class DictionaryBase:
     id = Column("Id", Integer, primary_key=True)
     code = Column("Code", String)
     description = Column("Description", String)
+
+    def __str__(self):
+        return self.description
