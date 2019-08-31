@@ -1,7 +1,8 @@
 from sqlalchemy.orm import relationship
+from sqlalchemy import Integer, Column
 
 from dbaccess.dbcontext import Base
-from dbmodels.dictionaries.dictionary_base import DictionaryBase, Integer, Column
+from dbmodels.abstract.dictionary_base import DictionaryBase
 
 
 class PhysicalParameter(DictionaryBase, Base):
@@ -11,3 +12,5 @@ class PhysicalParameter(DictionaryBase, Base):
 
     parameters = relationship("Parameter", back_populates="physicalParameter")
     measurementUnits = relationship("MeasurementUnit", back_populates="physicalParameter")
+    agreementSystemParameters = relationship("AgreementSystemParameter", back_populates="physicalParameter")
+

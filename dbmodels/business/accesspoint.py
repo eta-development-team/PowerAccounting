@@ -3,13 +3,14 @@ from sqlalchemy import Integer, String
 from sqlalchemy.orm import relationship
 
 from dbaccess.dbcontext import Base
+from dbmodels.abstract.entity import Entity
+from dbmodels.abstract.history_base import HistoryBase
 
 
-class AccessPoint(Base):
+class AccessPoint(Base, Entity, HistoryBase):
     __tablename__ = "AccessPoint"
     __table_args__ = {"schema": "Business"}
 
-    id = Column("Id", Integer, primary_key=True)
     description = Column("Description", String)
     measurementDevices = relationship(
         "MeasurementDevice",

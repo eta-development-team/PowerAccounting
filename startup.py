@@ -9,8 +9,8 @@ query = dbContext.Session()\
 measurementDevices = query.limit(10)
 
 for md in measurementDevices:
-    print(md)
+    print(md.id, md)
     for c in md.channels:
-        print("\t", c, c.measurementDevice.id, c.resourceSystemType)
+        print("\t", c, c.measurementDevice.id, c.resourceSystemType, c.createdBy)
 
 

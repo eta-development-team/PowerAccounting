@@ -3,13 +3,14 @@ from sqlalchemy import Integer, String
 from sqlalchemy.orm import relationship
 
 from dbaccess.dbcontext import Base
+from dbmodels.abstract.entity import Entity
+from dbmodels.abstract.history_base import HistoryBase
 
 
-class User(Base):
+class User(Base, HistoryBase, Entity):
     __tablename__ = 'User'
     __table_args__ = {"schema": "Admin"}
 
-    id = Column("Id", Integer, primary_key = True)
     userName = Column("UserName", String)
     roleId = Column("RoleId", Integer, ForeignKey('Admin.Role.Id'))
-    role = relationship("Role", back_populates = "users")
+    role = relationship("Role", back_populates="users")

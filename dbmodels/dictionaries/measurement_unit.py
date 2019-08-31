@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, ForeignKey
 from sqlalchemy.orm import relationship
 
 from dbaccess.dbcontext import Base
-from dbmodels.dictionaries.dictionary_base import DictionaryBase
+from dbmodels.abstract.dictionary_base import DictionaryBase
 
 
 class MeasurementUnit(DictionaryBase, Base):

@@ -3,9 +3,11 @@ from sqlalchemy import Integer, String
 from sqlalchemy.orm import relationship
 
 from dbaccess.dbcontext import Base
+from dbmodels.abstract.entity import Entity
+from dbmodels.abstract.history_base import HistoryBase
 
 
-class Channel(Base):
+class Channel(Base, Entity, HistoryBase):
     """Represents a Channel entity in a database"""
 
     __tablename__ = "Channel"

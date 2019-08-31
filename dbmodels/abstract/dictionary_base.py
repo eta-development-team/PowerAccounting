@@ -1,10 +1,12 @@
 from sqlalchemy import Column
-from sqlalchemy import Integer, String
+from sqlalchemy import String
+
+from dbmodels.abstract.entity import Entity
 
 
-class DictionaryBase:
+class DictionaryBase(Entity):
     __table_args__ = {"schema": "Dictionaries"}
-    id = Column("Id", Integer, primary_key=True)
+
     code = Column("Code", String)
     description = Column("Description", String)
 
