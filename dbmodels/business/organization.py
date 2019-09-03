@@ -8,7 +8,7 @@ from dbmodels.abstract.history_base import HistoryBase
 
 
 class Organization(Base, Entity, HistoryBase):
-    __tablename__ = "Building"
+    __tablename__ = "Organization"
     __table_args__ = {"schema": "Business"}
 
     description = Column("Description", String(256))
@@ -18,8 +18,9 @@ class Organization(Base, Entity, HistoryBase):
     organizationTypeId = Column(
         "OrganizationTypeId",
         Integer,
-        ForeignKey("Dictionaries.OrganizationType.Id ")
+        ForeignKey("Dictionaries.OrganizationType.Id")
     )
 
     organizationType = relationship("OrganizationType", back_populates="organizations")
     buildings = relationship("Building", back_populates="organization")
+    channels = relationship("Channel", back_populates="organization")

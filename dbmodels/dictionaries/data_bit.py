@@ -6,4 +6,7 @@ from dbmodels.abstract.dictionary_base import DictionaryBase
 
 class DataBit(DictionaryBase, Base):
     __tablename__ = "DataBit"
+
     devices = relationship("Device", back_populates="dataBit")
+    measurementDevices = relationship("MeasurementDevice", back_populates="dataBit")
+

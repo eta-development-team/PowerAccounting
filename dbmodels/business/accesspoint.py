@@ -21,8 +21,8 @@ class AccessPoint(Base, Entity, HistoryBase):
     lastConnectionTime = Column("LastConnectionTime", DateTime, default=datetime.fromisoformat("1900-01-01"))
     lastStatusConnectionId = Column("LastStatusConnectionId", Integer, default=1)
     successConnectionPercent = Column("SuccessConnectionPercent", Float, default=0.0)
-    ControllerAddress = Column("ControllerAddress", Integer, default=255)
-    IsNeedToReconfigure = Column("IsNeedToReconfigure", Boolean, default=False)
+    controllerAddress = Column("ControllerAddress", Integer, default=255)
+    isNeedToReconfigure = Column("IsNeedToReconfigure", Boolean, default=False)
 
     transportTypeId = Column(
         "TransportTypeId",
@@ -39,9 +39,14 @@ class AccessPoint(Base, Entity, HistoryBase):
         Integer,
         ForeignKey("Business.DeviceReader.Id")
     )
+    lastStatusConnectionId = Column(
+        "LastStatusConnectionId",
+        Integer,
+        ForeignKey("Dictionaries.StatusConnection.Id")
+    )
 
     transportType = relationship("TransportType", back_populates="accessPoints")
     transportServerModel = relationship("TransportServerModel", back_populates="accessPoints")
     deviceReader = relationship("DeviceReader", back_populates="accessPoints")
-
+    lastStatusConnection = relationship("StatusConnection", back_populates="accessPoints")
     measurementDevices = relationship("MeasurementDevice", back_populates="accessPoint")

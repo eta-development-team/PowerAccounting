@@ -6,16 +6,18 @@ from sqlalchemy.orm import sessionmaker
 Base = declarative_base()
 
 from dbmodels.business import accesspoint, \
-    measurement_device,\
-    channel,\
-    channel_template, device_reader
+    measurement_device, mnemoscheme, \
+    channel_template, channel, device_reader, \
+    organization, building, user_additional_info
+
 from dbmodels.dictionaries import \
     baud, data_bit, stop_bit, parity, \
     resource_system_type, resource_subsystem_type, \
-    transport_type, transport_server_model, \
-    physical_parameter, \
+    transport_type, transport_server_model, physical_parameter, \
     parameter, measurement_unit, device_parameter, device, agreement_system_parameter, \
-    device_event_parameter, internal_device_event, device_reader_type
+    device_event_parameter, internal_device_event, device_reader_type, \
+    status_connection, com_port, port_type, mnemoscheme_type, \
+    organization_type, building_purpose, district, gender, city
 
 from dbmodels.admin import role, user
 
@@ -42,6 +44,7 @@ Device = device.Device
 deviceReaderType = device_reader_type.DeviceReaderType
 DeviceEventParameter = device_event_parameter.DeviceEventParameter
 InternalDeviceEvent = internal_device_event.InternalDeviceEvent
+StatusConnection = status_connection.StatusConnection
 
 # Business
 DeviceReader = device_reader.DeviceReader
@@ -49,8 +52,6 @@ AccessPoint = accesspoint.AccessPoint
 MeasurementDevice = measurement_device.MeasurementDevice
 ChannelTemplate = channel_template.ChannelTemplate
 Channel = channel.Channel
-ChannelTemplate = channel_template.ChannelTemplate
-
 
 
 class DbContext:

@@ -46,3 +46,4 @@ class Device(DictionaryBase, Base):
     internalDeviceEvents = relationship("InternalDeviceEvent", back_populates="device")
     deviceParameters = relationship("DeviceParameter", back_populates="device")
     channelTemplates = relationship("ChannelTemplate", back_populates="device")
+    measurementDevices = relationship("MeasurementDevice", back_populates="device")

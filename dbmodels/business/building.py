@@ -32,10 +32,14 @@ class Building(Base, Entity, HistoryBase):
         Integer,
         ForeignKey("Business.Organization.Id")
     )
+    userAdditionalInfoId = Column(
+        "UserAdditionalInfoId",
+        Integer,
+        ForeignKey("Business.UserAdditionalInfo.Id")
+    )
 
     buildingPurpose = relationship("BuildingPurpose", back_populates="buildings")
     district = relationship("District", back_populates="buildings")
     organization = relationship("Organization", back_populates="buildings")
     userAdditionalInfo = relationship("UserAdditionalInfo", back_populates="buildings")
-
 

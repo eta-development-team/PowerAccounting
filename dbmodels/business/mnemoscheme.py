@@ -7,6 +7,8 @@ from dbmodels.abstract.entity import Entity
 
 class Mnemoscheme(Base, Entity):
     __tablename__ = "Mnemoscheme"
+    __table_args__ = {"schema": "Business"}
+
     description = Column("Description", String)
     image = Column("Image", Text)
     zoom = Column("Zoom", Float)
@@ -15,4 +17,6 @@ class Mnemoscheme(Base, Entity):
         Integer,
         ForeignKey("Dictionaries.MnemoschemeType.Id")
     )
+    channels = relationship("Channel", back_populates="mnemoscheme")
+
     mnemoschemeType = relationship("MnemoschemeType", back_populates="mnemoschemes")

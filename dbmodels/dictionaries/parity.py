@@ -6,4 +6,6 @@ from dbmodels.abstract.dictionary_base import DictionaryBase
 
 class Parity(DictionaryBase, Base):
     __tablename__ = "Parity"
+
     devices = relationship("Device", back_populates="parity")
+    measurementDevices = relationship("MeasurementDevice", back_populates="parity")

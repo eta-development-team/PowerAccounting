@@ -22,7 +22,7 @@ class UserAdditionalInfo(Base, Entity, HistoryBase):
     genderId = Column(
         "GenderId",
         Integer,
-        ForeignKey("Dictionaries.Gender,Id")
+        ForeignKey("Dictionaries.Gender.Id")
     )
     gender = relationship("Gender", back_populates="userAdditionalInfos")
     buildings = relationship("Building", back_populates="userAdditionalInfo")

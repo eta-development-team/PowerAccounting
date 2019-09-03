@@ -8,6 +8,8 @@ from dbmodels.abstract.history_base import HistoryBase
 
 class ChannelTemplate(Base, Entity, HistoryBase):
     __tablename__ = "ChannelTemplate"
+    __table_args__ = {"schema": "Business"}
+
     description = Column("Description", String)
     comment = Column("Comment", String)
     resourceSystemTypeId = Column(
@@ -34,3 +36,5 @@ class ChannelTemplate(Base, Entity, HistoryBase):
     device = relationship("Device", back_populates="channelTemplates")
     resourceSystemType = relationship("ResourceSystemType", back_populates="channelTemplates")
     resourceSubsystemType = relationship("ResourceSubsystemType", back_populates="channelTemplates")
+
+    channels = relationship("Channel", back_populates="channelTemplate")
