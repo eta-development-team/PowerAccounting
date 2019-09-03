@@ -44,4 +44,5 @@ class Device(DictionaryBase, Base):
 
     deviceEventParameters = relationship("DeviceEventParameter", back_populates="device")
     internalDeviceEvents = relationship("InternalDeviceEvent", back_populates="device")
-    deviceParameters = relationship("DeviceEventParameter", back_populates="device")
+    deviceParameters = relationship("DeviceParameter", back_populates="device")
+    channelTemplates = relationship("ChannelTemplate", back_populates="device")

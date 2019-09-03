@@ -5,38 +5,52 @@ from sqlalchemy.orm import sessionmaker
 
 Base = declarative_base()
 
-from dbmodels.business import accesspoint, measurement_device, channel
+from dbmodels.business import accesspoint, \
+    measurement_device,\
+    channel,\
+    channel_template, device_reader
 from dbmodels.dictionaries import \
-    baud, data_bit, stop_bit, parity, resource_system_type, \
+    baud, data_bit, stop_bit, parity, \
+    resource_system_type, resource_subsystem_type, \
+    transport_type, transport_server_model, \
     physical_parameter, \
-    parameter, measurement_unit, device, agreement_system_parameter, \
-    device_event_parameter, internal_device_event
+    parameter, measurement_unit, device_parameter, device, agreement_system_parameter, \
+    device_event_parameter, internal_device_event, device_reader_type
 
 from dbmodels.admin import role, user
 
-# Dictionaries
 
+# Admin
+User = user.User
+Role = role.Role
+
+# Dictionaries
 Baud = baud.Baud
 StopBit = stop_bit.StopBit
 DataBit = data_bit.DataBit
 Parity = parity.Parity
 MeasurementUnit = measurement_unit.MeasurementUnit
 ResourceSystemType = resource_system_type.ResourceSystemType
+ResourceSubsystemType = resource_subsystem_type.ResourceSubsystemType
 AgreementSystemParameter = agreement_system_parameter.AgreementSystemParameter
 PhysicalParameter = physical_parameter.PhysicalParameter
 Parameter = parameter.Parameter
+TransportType = transport_type.TransportType
+TransportServerModel = transport_server_model.TransportServerModel
+DeviceParameter = device_parameter.DeviceParameter
 Device = device.Device
+deviceReaderType = device_reader_type.DeviceReaderType
 DeviceEventParameter = device_event_parameter.DeviceEventParameter
 InternalDeviceEvent = internal_device_event.InternalDeviceEvent
 
 # Business
+DeviceReader = device_reader.DeviceReader
 AccessPoint = accesspoint.AccessPoint
 MeasurementDevice = measurement_device.MeasurementDevice
+ChannelTemplate = channel_template.ChannelTemplate
 Channel = channel.Channel
+ChannelTemplate = channel_template.ChannelTemplate
 
-# Admin
-User = user.User
-Role = role.Role
 
 
 class DbContext:

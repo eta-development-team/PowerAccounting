@@ -11,5 +11,6 @@ class ResourceSystemType(DictionaryBase, Base):
     channels = relationship("Channel", back_populates="resourceSystemType")
     parameters = relationship("Parameter", back_populates="resourceSystemType")
     agreementSystemParameters = relationship("AgreementSystemParameter", back_populates="resourceSystemType")
+    channelTemplates = relationship("ChannelTemplate", back_populates="resourceSystemType")
 
 

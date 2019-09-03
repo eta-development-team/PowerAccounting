@@ -14,3 +14,5 @@ class User(Base, HistoryBase, Entity):
     userName = Column("UserName", String)
     roleId = Column("RoleId", Integer, ForeignKey('Admin.Role.Id'))
     role = relationship("Role", back_populates="users")
+
+    deviceReaders = relationship("DeviceReader", back_populates="user")
